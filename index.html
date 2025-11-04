@@ -1,0 +1,513 @@
+=<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedant Metkar | Software Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0a09; /* Very Dark Background */
+        }
+        /* Custom Theme Colors (Cyber/Tech Aesthetic) */
+        .primary-accent-bg { background-color: #9333ea; /* Violet-600 */ }
+        .primary-accent-hover:hover { background-color: #7e22ce; /* Violet-700 */ }
+        .secondary-accent-text { color: #06b6d4; /* Cyan-500 */ }
+        .card-bg { background-color: #1a1a2e; /* Darker, slightly blue-tinted card background */ }
+        
+        /* Utility class for smooth scroll target */
+        .scroll-target {
+            padding-top: 6rem; 
+            margin-top: -6rem;
+        }
+
+        /* Card Hover Effect */
+        .interactive-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .interactive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(147, 51, 234, 0.2); /* Violet Shadow */
+        }
+
+        /* Scroll Reveal Base Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+
+    <!-- DESKTOP NAVIGATION BAR (Sticky, Visible on Medium screens and up) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 hidden md:block bg-gray-950/95 backdrop-blur-sm shadow-xl border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-8 py-3 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400 hover:text-white transition">Vedant Metkar</a>
+            
+            <div id="desktop-links" class="flex space-x-6 text-sm font-medium">
+                <a href="#about" class="text-gray-300 hover:text-cyan-400 transition">About Me</a>
+                <a href="#experience" class="text-gray-300 hover:text-cyan-400 transition">Experience</a>
+                <a href="#skills" class="text-gray-300 hover:text-cyan-400 transition">Skills</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-cyan-400 transition">Projects</a>
+                <a href="#education" class="text-gray-300 hover:text-cyan-400 transition">Education</a>
+                <a href="#achievements" class="text-gray-300 hover:text-cyan-400 transition">Recognition</a>
+                <a href="#contact" class="px-3 py-1 primary-accent-bg rounded-full text-white hover:bg-violet-700 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu Button (Hamburger) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-950 shadow-lg md:hidden">
+        <div class="flex justify-end p-4">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Overlay (Hidden by Default) -->
+    <nav id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex flex-col p-8 pt-20 space-y-4">
+            <h2 class="text-3xl font-extrabold mb-6 text-violet-400">Website Navigation</h2>
+            <div id="quick-links" class="flex flex-col space-y-3">
+                <!-- Links will be added here by JavaScript to ensure consistency -->
+            </div>
+            <h3 class="text-2xl font-bold mt-8 text-gray-300">Connect with Me</h3>
+            <div class="flex space-x-4">
+                 <!-- Mock links, replace with your actual URLs -->
+                <a href="#" target="_blank" class="px-4 py-2 text-white border border-gray-700 rounded-lg hover:border-cyan-400 transition">LinkedIn</a>
+                <a href="#" target="_blank" class="px-4 py-2 text-white border border-gray-700 rounded-lg hover:border-cyan-400 transition">GitHub</a>
+            </div>
+        </div>
+    </nav>
+    
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <!-- 1. HERO SECTION (Updated: Background removed, typing effect added) -->
+        <section id="home" class="scroll-target min-h-[60vh] flex items-center justify-center relative overflow-hidden rounded-xl bg-gray-900 shadow-2xl shadow-violet-900/50">
+            <div class="z-10 p-8 md:p-16 text-center">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400">Vedant Metkar</h1>
+                <p id="tagline" class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 min-h-[3rem]">
+                    <!-- Typing effect targets this text -->
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 reveal" style="transition-delay: 1.5s;">
+                    <a href="#contact" class="px-6 py-3 primary-accent-bg text-white font-semibold rounded-xl shadow-lg hover:shadow-cyan-500/50 primary-accent-hover transition duration-300">Contact Me</a>
+                    <a href="https://www.linkedin.com/feed/?trk=nav_back_to_linkedin" target="_blank" class="px-6 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-gray-900 transition duration-300">LinkedIn</a>
+                    <a href="#portfolio" class="px-6 py-3 border border-gray-500 text-white font-semibold rounded-xl hover:border-white transition duration-300">View Complete Portfolio</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT ME SECTION -->
+        <section id="about" class="scroll-target pt-16 pb-12 reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-white">About Me</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 items-start">
+                
+                <!-- Left Column: Image -->
+                <div class="md:col-span-1 rounded-xl overflow-hidden shadow-2xl interactive-card reveal">
+                    <Reveal><img src="https://media.licdn.com/dms/image/v2/D4D03AQF5RENB42jcow/profile-displayphoto-crop_800_800/B4DZi9.PuIGsAg-/0/1755533869724?e=1763596800&v=beta&t=IQWjZ1xB5FUjsMVwfTkxGNjEbRxv0wBe0gMM8SMq_uc"  class="w-full h-auto object-cover md:h-full">
+                </div>
+
+                <!-- Right Column: Text Content -->
+                <div class="md:col-span-2 space-y-8">
+                    
+                    <div class="card-bg p-8 rounded-xl shadow-lg interactive-card reveal" style="transition-delay: 0.2s;">
+                        <p class="text-lg text-gray-300">
+                            Hey there! I'm Vedant Metkar, and I absolutely love being a Software Developer. What truly drives me is crafting cool, innovative solutions that actually make a difference in the real world. My journey into computer science has given me a solid grounding in full-stack development, and I'm always super eager to dive into new, emerging technologies.
+                        </p>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <!-- What I'm Aiming For -->
+                        <div class="card-bg p-8 rounded-xl shadow-lg space-y-2 interactive-card reveal" style="transition-delay: 0.4s;">
+                            <h3 class="text-2xl font-bold secondary-accent-text mb-3">What I'm Aiming For</h3>
+                            <p class="text-gray-300">
+                                My main career goal is to be part of projects that genuinely make a tangible difference. I want to use my full-stack skills to build systems that are not just robust and scalable, but also genuinely impactful. I'm really hoping to work in places where I can keep learning, collaborate with awesome people, and grow as a developer while innovating with talented teams.
+                            </p>
+                        </div>
+                        
+                        <!-- My Approach to Work -->
+                        <div class="card-bg p-8 rounded-xl shadow-lg space-y-2 interactive-card reveal" style="transition-delay: 0.6s;">
+                            <h3 class="text-2xl font-bold secondary-accent-text mb-3">My Approach to Work</h3>
+                            <p class="text-gray-300">
+                                My philosophy at work? It's all about constantly getting better, paying super close attention to details, and embracing a collaborative spirit. I truly believe in writing clean, easy-to-understand code, and that teamwork can achieve absolutely incredible results. I'm committed to delivering top-notch solutions and I genuinely see every challenge as a cool chance to learn and grow.
+                            </p>
+                            
+                            <!-- Life Beyond the Code (Integrated here for flow) -->
+                             <h3 class="text-xl font-bold mt-4 mb-2 text-white">Life Beyond the Code</h3>
+                             <p class="text-gray-400">
+                                When I'm not buried in code, I enjoy challenging myself with competitive programming, contributing to open-source projects, and staying active with sports.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. PROFESSIONAL EXPERIENCE -->
+        <section id="experience" class="scroll-target pt-16 pb-12 reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-white">Professional Experience</h2>
+            <!-- ibentos-->
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-bg p-8 rounded-xl shadow-xl space-y-3 interactive-card reveal">
+                    <h3 class="text-2xl font-bold text-violet-400">Software Engineer </h3>
+                    <p class="font-semibold text-gray-200">ibentos | Remote/WFH | Oct 2025 – Present</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-300">
+                        <li>Served as a key member of the app development team, contributing to mobile platforms</li>
+                        <li>Utilized JavaScript to build responsive user interfaces and interactive features</li>
+                        <li>Helped deliver scalable, user-friendly solutions aligned with project goals</li>
+                    </ul>
+                </div>
+                
+                <!--hashedbit  -->
+                <div class="card-bg p-8 rounded-xl shadow-xl space-y-3 interactive-card reveal">
+                    <h3 class="text-2xl font-bold text-violet-400">Software Development Intern</h3>
+                    <p class="font-semibold text-gray-200">HASHEDBIT Innovations | Remote/WFH | Sept 2025 – Nov 2025</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-300">
+                        <li>Contributed to full-stack development projects with modern technologies, focusing on efficient data handling and system scalability.</li>
+                        <li>Collaborated in Agile sprints to deliver production-ready features for key client applications.</li>
+                       
+                    </ul>
+                </div>
+
+                <!-- rm industry -->
+                <div class="card-bg p-8 rounded-xl shadow-xl space-y-3 interactive-card reveal" style="transition-delay: 0.2s;">
+                    <h3 class="text-2xl font-bold text-violet-400">Development & Management Intern</h3>
+                    <p class="font-semibold text-gray-200">R.M. INDUSTRIES | Amravati | Jun 2024 – Nov 2024</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-300">
+                        <li>Assisted in project coordination, resource allocation, and performance monitoring for internal systems upgrades.</li>
+                        <li>Supported stakeholder communication and documentation, ensuring project milestones were met on time.</li>
+                        <li>Gained experience managing the intersection of technical requirements and business objectives.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TECHNICAL SKILLS -->
+        <section id="skills" class="scroll-target pt-16 pb-12 reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-white">Technical Skills</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Column 1: Programming Languages & Frameworks -->
+                <div class="space-y-6">
+                    <!-- Programming Languages -->
+                    <div class="card-bg p-6 rounded-xl shadow-lg space-y-2 interactive-card reveal">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-3xl secondary-accent-text">💻</span>
+                            <h3 class="text-2xl font-bold text-white">Programming Languages</h3>
+                        </div>
+                        <p class="text-lg text-gray-300">C, Java, C++, JavaScript, Python, SQL</p>
+                    </div>
+
+                    <!-- Libraries & Frameworks -->
+                    <div class="card-bg p-6 rounded-xl shadow-lg space-y-2 interactive-card reveal" style="transition-delay: 0.2s;">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-3xl secondary-accent-text">🌐</span>
+                            <h3 class="text-2xl font-bold text-white">Libraries & Frameworks</h3>
+                        </div>
+                        <p class="text-lg text-gray-300">Node.js, Flutter, Firebase, Express.js , SpringBoot ,Angular </p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Development Tools & Database -->
+                <div class="space-y-6">
+                    <!-- Development Tools -->
+                    <div class="card-bg p-6 rounded-xl shadow-lg space-y-2 interactive-card reveal">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-3xl secondary-accent-text">🛠️</span>
+                            <h3 class="text-2xl font-bold text-white">Development Tools</h3>
+                        </div>
+                        <p class="text-lg text-gray-300">Git, VS Code, IntelliJ IDEA, Flutter Flow, Linux/Bash</p>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="card-bg p-6 rounded-xl shadow-lg space-y-2 interactive-card reveal" style="transition-delay: 0.2s;">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-3xl secondary-accent-text">💾</span>
+                            <h3 class="text-2xl font-bold text-white">Database</h3>
+                        </div>
+                        <p class="text-lg text-gray-300">SQL (PostgreSQL, MySQL) for data management and queries.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- 5. FEATURED PROJECTS -->
+        <section id="portfolio" class="scroll-target pt-16 pb-12 reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-white">Featured Projects</h2>
+            
+            <div class="space-y-12">
+                
+                <!-- Project 1: Smart Waste AI Vision -->
+                <div class="grid md:grid-cols-3 gap-8 p-6 md:p-10 rounded-xl card-bg shadow-2xl interactive-card reveal">
+                    <div class="md:col-span-1">
+                        <h3 class="text-3xl font-bold text-white mb-2">Smart Waste AI Vision</h3>
+                        <p class="text-sm secondary-accent-text mb-4">Technologies: Python, IoT (Arduino/ESP32), AI/ML</p>
+                        <p class="text-gray-300 mb-6">Revolutionizing urban cleanliness with AI-powered waste management solutions. An intelligent system that rewards green living through classification and user engagement.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://smart-waste-virid.vercel.app/" target="_blank" class="px-5 py-2 primary-accent-bg text-white font-semibold rounded-lg primary-accent-hover transition duration-300">Live Demo</a>
+                          
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <img src="https://kotaielectronics.com/wp-content/uploads/2021/12/Smart-Waste-Management.jpg" alt="Smart Waste AI Vision Project Screenshot" class="w-full rounded-lg shadow-xl">
+                    </div>
+                </div>
+
+                <!-- Project 2: Grocery Store Management Application -->
+                <div class="grid md:grid-cols-3 gap-8 p-6 md:p-10 rounded-xl card-bg shadow-2xl interactive-card reveal" style="transition-delay: 0.2s;">
+                    <div class="md:col-span-2">
+                         <img src="https://img.freepik.com/premium-vector/grocery-store-logo-design_972076-1379.jpg" alt="Grocery Store Management Application Screenshot" class="w-full rounded-lg shadow-xl">
+                    </div>
+                    <div class="md:col-span-1">
+                        <h3 class="text-3xl font-bold text-white mb-2">Grocery Store Management Application</h3>
+                        <p class="text-sm secondary-accent-text mb-4">Technologies: Flutter Flow, SQL, Java</p>
+                        <p class="text-gray-300 mb-6">End-to-end operational streamlining with automated product management and robust technical architecture for retail efficiency.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" target="_blank" class="px-5 py-2 primary-accent-bg text-white font-semibold rounded-lg primary-accent-hover transition duration-300">Live Demo</a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Supply Chain Collaboration Platform -->
+                <div class="p-8 rounded-xl card-bg shadow-lg interactive-card reveal" style="transition-delay: 0.4s;">
+                    <h3 class="text-2xl font-bold text-white">Supply Chain Collaboration Platform</h3>
+                    <p class="text-sm secondary-accent-text mb-3">Technologies: Node.js, Flutter, SQL, Firebase, IoT, Java</p>
+                    <p class="text-gray-300">Comprehensive platform providing end-to-end transparency, role-based access control, and automated operational insights to improve supply chain efficiency.</p>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- 6. EDUCATION -->
+        <section id="education" class="scroll-target pt-16 pb-12 reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-white">Education</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                
+                <!-- Education Timeline/List -->
+                <div class="space-y-8">
+                    
+                    <!-- Entry 1: Bachelor of Engineering -->
+                    <div class="relative pl-6 border-l-4 border-violet-500 interactive-card reveal">
+                        <div class="absolute left-[-11px] top-0 w-5 h-5 primary-accent-bg rounded-full flex items-center justify-center text-xs font-bold">1</div>
+                        <h3 class="text-2xl font-bold text-white">Bachelor of Engineering - Computer Science</h3>
+                        <p class="text-lg text-gray-300">Sipna College of Engineering and Technology</p>
+                        <p class="text-sm text-gray-400">CGPA: 8.5 | Oct 2022 – 2026 | Amravati</p>
+                    </div>
+
+                    <!-- Entry 2: Higher Secondary Certificate -->
+                    <div class="relative pl-6 border-l-4 border-violet-500 interactive-card reveal" style="transition-delay: 0.2s;">
+                        <div class="absolute left-[-11px] top-0 w-5 h-5 primary-accent-bg rounded-full flex items-center justify-center text-xs font-bold">2</div>
+                        <h3 class="text-2xl font-bold text-white">Higher Secondary Certificate - Computer Science</h3>
+                        <p class="text-lg text-gray-300">Shree Ramkrishna Krida Kanishtha Mahavidyalaya</p>
+                        <p class="text-sm text-gray-400">Percentage: 84.5% | Dec 2020 – Jun 2022 | Amravati</p>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="hidden md:block rounded-xl overflow-hidden shadow-2xl reveal">
+                    <img src="https://sipnaengg.ac.in/admission/static/media/SIPNA_TRANS_PNG.b0846e31.png" class="w-full h-auto">
+                </div>
+            </div>
+        </section>
+        
+        <!-- 7. ACHIEVEMENTS & RECOGNITION -->
+        <section id="achievements" class="scroll-target pt-16 pb-12 reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-white">Achievements & Recognition</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Achievement Card 1 -->
+                <div class="card-bg p-8 rounded-xl shadow-xl space-y-3 flex flex-col interactive-card reveal">
+                    <span class="text-4xl secondary-accent-text mb-2">⚙️</span>
+                    <h3 class="text-2xl font-bold text-white">AI & Machine Learning Certification</h3>
+                    <p class="text-gray-300">
+                        Completed advanced certification program from **IIT Bombay**, gaining expertise in deep learning model deployment and natural language processing.
+                    </p>
+                </div>
+
+                <!-- Achievement Card 2 -->
+                <div class="card-bg p-8 rounded-xl shadow-xl space-y-3 flex flex-col interactive-card reveal" style="transition-delay: 0.2s;">
+                    <span class="text-4xl secondary-accent-text mb-2">🏅</span>
+                    <h3 class="text-2xl font-bold text-white">IEI Best Student Award Nomination</h3>
+                    <p class="text-gray-300">
+                        Nominated for the prestigious Institution of Engineers India Best Student Award, recognizing academic excellence and demonstrable technical contributions in full-stack systems and AI applications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. LET'S CONNECT -->
+        <section id="contact" class="scroll-target pt-16 pb-12 reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-12 text-white">Let's Connect</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 p-10 rounded-xl card-bg shadow-2xl items-center interactive-card reveal" style="transition-delay: 0.2s;">
+                
+                <!-- Left Column: Image -->
+                <div class="hidden md:block rounded-xl overflow-hidden">
+                    <img src="https://i.pinimg.com/originals/b0/fe/b5/b0feb54694586ae8e7d8f0d3f92eea65.jpg"  class="w-full h-auto">
+                </div>
+
+                <!-- Right Column: CTA Content -->
+                <div class="space-y-6">
+                    <p class="text-xl text-gray-300">
+                        Ready to collaborate on innovative software solutions and bring ideas to life through technology.
+                    </p>
+                    
+                    <!-- Opportunities Block -->
+                    <div class="flex items-start space-x-4">
+                        <span class="text-3xl secondary-accent-text mt-1">💼</span>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Open to Opportunities</h3>
+                            <p class="text-gray-400">
+                                Seeking full-time **Full-Stack or AI/ML** Software Developer roles. Driven to contribute to impactful, large-scale projects and collaborate with innovative technical teams.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Collaboration Block -->
+                    <div class="flex items-start space-x-4">
+                        <span class="text-3xl secondary-accent-text mt-1">🤝</span>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Collaboration Ready</h3>
+                            <p class="text-gray-400">
+                                Available for freelance projects, open-source contributions, and technical consulting in web development and AI applications.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Buttons -->
+                    <div class="flex space-x-4 pt-4">
+                        <a href="mailto:vedantmetkar02@gmail.com" class="px-6 py-3 primary-accent-bg text-white font-semibold rounded-xl shadow-lg hover:shadow-cyan-500/50 primary-accent-hover transition duration-300">Get In Touch</a>
+                        <!-- Changed "Call Me" to a professional-sounding action link -->
+                        <a href="https://calendly.com/your-scheduling-link" target="_blank" class="px-6 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-gray-900 transition duration-300">Schedule Chat</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto p-8 text-center text-gray-500 border-t border-gray-800 mt-12">
+        <p>&copy; 2025 Vedant Metkar. </p>
+    </footer>
+
+    <script>
+        // Typing Effect Script
+        const taglineElement = document.getElementById('tagline');
+        const textToType = "Software Developer passionate about creating innovative solutions through full-stack development and emerging technologies.";
+        let i = 0;
+        let speed = 30; // Typing speed in milliseconds
+
+        function typeWriter() {
+            if (i < textToType.length) {
+                taglineElement.innerHTML += textToType.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        // Scroll Reveal Script (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Stop observing once visible to save performance
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px 0px -50px 0px' // Slightly delayed trigger
+        });
+
+        function setupScrollReveal() {
+            document.querySelectorAll('.reveal').forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // General Setup and Navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start the typing effect on load
+            typeWriter();
+            
+            // Set up scroll animations
+            setupScrollReveal();
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const quickLinksContainer = document.getElementById('quick-links');
+            const sections = [
+                { id: 'home', text: 'View Home' },
+                { id: 'about', text: 'About Me' },
+                { id: 'experience', text: 'My Experience' },
+                { id: 'skills', text: 'Technical Skills' },
+                { id: 'portfolio', text: 'Featured Projects' },
+                { id: 'achievements', text: 'Achievements' },
+                { id: 'contact', text: 'Contact Info' },
+            ];
+
+            // Populate the Quick Links in the mobile menu and set up desktop scrolling
+            sections.forEach(section => {
+                const link = document.createElement('a');
+                link.href = `#${section.id}`;
+                link.textContent = section.text;
+                link.classList.add('px-4', 'py-2', 'text-white', 'border', 'border-violet-400', 'rounded-lg', 'hover:bg-violet-700', 'transition', 'text-lg', 'font-medium', 'block', 'text-center');
+                
+                // Add event listener for smooth scrolling
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelector(link.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu after clicking a link
+                    if (mobileMenu.classList.contains('translate-x-0')) {
+                        mobileMenu.classList.remove('translate-x-0');
+                        mobileMenu.classList.add('-translate-x-full');
+                    }
+                });
+                
+                quickLinksContainer.appendChild(link);
+            });
+
+            // Toggle Mobile Menu
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('-translate-x-full');
+                mobileMenu.classList.toggle('translate-x-0');
+            });
+        });
+
+        // Set Firebase Log Level (Standard practice for the environment)
+        console.warn("Firebase config variables are needed for true data persistence but are not included in this static HTML simulation.");
+
+        // Fallback for contact links (if not using a real form)
+        document.querySelector('a[href="mailto:youremail@example.com"]').addEventListener('click', (e) => {
+            console.log("Simulating 'Get In Touch' click. This would typically open a mail client or a contact form.");
+        });
+
+    </script>
+
+</body>
+</html>
